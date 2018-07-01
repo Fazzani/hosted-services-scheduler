@@ -1,0 +1,12 @@
+language: csharp
+mono: none
+dotnet: 2.1.0
+dist: trusty
+env:  
+  - CLI_VERSION=latest
+script:
+ - dotnet pack -o ./out
+ - dotnet nuget push ./out -k ${NUGET_API_KEY} -s https://api.nuget.org/v3/index.json /p:PackageVersion="1.0.${TRAVIS_BUILD_NUMBER}"
+branches:  
+  only:
+    - master

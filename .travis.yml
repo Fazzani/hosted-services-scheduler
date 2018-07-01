@@ -7,7 +7,7 @@ env:
 script:
  - dotnet --version
  - dotnet pack ./Synker.Scheduled.Example -o ./out
- - dotnet nuget push ./out/ -k ${NUGET_API_KEY} -s https://api.nuget.org/v3/index.json /p:PackageVersion="1.0.${TRAVIS_BUILD_NUMBER}"
+ - dotnet nuget push ./out -k "${NUGET_API_KEY}"-s https://api.nuget.org/v3/index.json /p:PackageVersion="1.0.${TRAVIS_BUILD_NUMBER}"
 branches:  
   only:
     - master

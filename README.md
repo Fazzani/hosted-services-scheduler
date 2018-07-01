@@ -1,5 +1,7 @@
 # Dotnet core Hosted Services Scheduler
 
+[![Build Status](https://travis-ci.org/Fazzani/hosted-services-scheduler.svg?branch=master)](https://travis-ci.org/Fazzani/hosted-services-scheduler)
+
 Api for Scheduling dotnet core hosted service 
 
 Example
@@ -20,7 +22,7 @@ public class QuoteOfTheDayTask : IScheduledTask
     }
     
     public class QuoteOfTheDay
-    {
+    {	
         public static QuoteOfTheDay Current { get; set; }
 
         static QuoteOfTheDay()

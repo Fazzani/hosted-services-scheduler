@@ -6,7 +6,7 @@ env:
   - CLI_VERSION=latest
 script:
  - dotnet --version
- - dotnet pack ./Synker.Scheduled.HostedServices -o ./out -c Release
+ - dotnet pack ./Synker.Scheduled.HostedServices/Synker.Scheduled.HostedServices.csproj -o ./out -c Release
  - dotnet nuget push ./out -k "${NUGET_API_KEY}"-s https://api.nuget.org/v3/index.json /p:PackageVersion="1.0.${TRAVIS_BUILD_NUMBER}"
 branches:  
   only:
